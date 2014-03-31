@@ -1,0 +1,116 @@
+ij> describe class;
+COLUMN_NAME         |TYPE_NAME|DEC&|NUM&|COLUM&|COLUMN_DEF|CHAR_OCTE&|IS_NULL&
+------------------------------------------------------------------------------
+CLASS_ID            |INTEGER  |0   |10  |10    |AUTOINCRE&|NULL      |NO
+SESSION_BEGIN       |SMALLINT |0   |10  |5     |NULL      |NULL      |YES
+YEAR_NO             |SMALLINT |0   |10  |5     |NULL      |NULL      |YES
+BRANCH              |VARCHAR  |NULL|NULL|20    |NULL      |40        |YES
+SECTION             |VARCHAR  |NULL|NULL|1     |NULL      |2         |YES
+
+5 rows selected
+ij> describe attendance;
+COLUMN_NAME         |TYPE_NAME|DEC&|NUM&|COLUM&|COLUMN_DEF|CHAR_OCTE&|IS_NULL&
+------------------------------------------------------------------------------
+ROLLNO              |INTEGER  |0   |10  |10    |NULL      |NULL      |YES
+SUBJECT_ID          |varchar  |NULL|NULL|50    |NULL      |100       |YES
+YEAR_NO             |SMALLINT |0   |10  |5     |NULL      |NULL      |YES
+COUNT               |SMALLINT |0   |10  |5     |NULL      |NULL      |YES
+CLASS_ID            |SMALLINT |0   |10  |5     |NULL      |NULL      |YES
+
+5 rows selected
+ij> describe rollno_subject;
+COLUMN_NAME         |TYPE_NAME|DEC&|NUM&|COLUM&|COLUMN_DEF|CHAR_OCTE&|IS_NULL&
+------------------------------------------------------------------------------
+ROLLNO              |INTEGER  |0   |10  |10    |0         |NULL      |NO
+MARKS               |SMALLINT |0   |10  |5     |NULL      |NULL      |YES
+
+ij> describe exams;
+COLUMN_NAME         |TYPE_NAME|DEC&|NUM&|COLUM&|COLUMN_DEF|CHAR_OCTE&|IS_NULL&
+------------------------------------------------------------------------------
+EXAM_NO             |INTEGER  |0   |10  |10    |AUTOINCRE&|NULL      |NO
+EXAM_ID             |INTEGER  |0   |10  |10    |NULL      |NULL      |YES
+TOTAL_MARKS         |SMALLINT |0   |10  |5     |NULL      |NULL      |YES
+SUBJECT_ID          |VARCHAR  |NULL|NULL|50    |NULL      |100       |YES
+class_id             |       sdlgj         df
+
+SELECT r.marks, e.total_marks FROM rollno_subject r,exams e WHERE r.rollno=? AND e.exam_id=? AND e.class_id in (SELECT class_id from class where session_begin=?)
+
+ij> describe class_attendance;
+COLUMN_NAME         |TYPE_NAME|DEC&|NUM&|COLUM&|COLUMN_DEF|CHAR_OCTE&|IS_NULL&
+------------------------------------------------------------------------------
+CLASS_ID            |SMALLINT |0   |10  |5     |NULL      |NULL      |YES
+SUBJECT_ID          |varchar  |NULL|NULL|20    |NULL      |40        |YES
+TOTAL_COUNT         |SMALLINT |0   |10  |5     |NULL      |NULL      |YES
+
+ij> describe student_info;
+COLUMN_NAME         |TYPE_NAME|DEC&|NUM&|COLUM&|COLUMN_DEF|CHAR_OCTE&|IS_NULL&
+------------------------------------------------------------------------------
+NAME                |VARCHAR  |NULL|NULL|50    |NULL      |100       |YES
+FATHER_NAME         |VARCHAR  |NULL|NULL|50    |NULL      |100       |YES
+MOTHER_NAME         |VARCHAR  |NULL|NULL|50    |NULL      |100       |YES
+EMAIL               |VARCHAR  |NULL|NULL|50    |NULL      |100       |YES
+PARENT_EMAIL        |VARCHAR  |NULL|NULL|50    |NULL      |100       |YES
+COURSE              |VARCHAR  |NULL|NULL|50    |NULL      |100       |YES
+BRANCH              |VARCHAR  |NULL|NULL|50    |NULL      |100       |YES
+ROLLNO              |INTEGER  |0   |10  |10    |0         |NULL      |NO
+
+ij> describe users;
+COLUMN_NAME         |TYPE_NAME|DEC&|NUM&|COLUM&|COLUMN_DEF|CHAR_OCTE&|IS_NULL&
+------------------------------------------------------------------------------
+USER_ID             |SMALLINT |0   |10  |5     |0         |NULL      |NO
+USERNAME            |VARCHAR  |NULL|NULL|50    |NULL      |100       |NO
+PASSWORD            |VARCHAR  |NULL|NULL|50    |NULL      |100       |NO
+ENABLED             |BOOLEAN  |NULL|NULL|1     |false     |NULL      |NO
+
+4 rows selected
+ij> describe user_roles;
+COLUMN_NAME         |TYPE_NAME|DEC&|NUM&|COLUM&|COLUMN_DEF|CHAR_OCTE&|IS_NULL&
+------------------------------------------------------------------------------
+USER_ROLE_ID        |SMALLINT |0   |10  |5     |0         |NULL      |NO
+USER_ID             |SMALLINT |0   |10  |5     |NULL      |NULL      |YES
+AUTHORITY           |VARCHAR  |NULL|NULL|15    |NULL      |30        |YES
+
+ij> describe fee;
+COLUMN_NAME         |TYPE_NAME|DEC&|NUM&|COLUM&|COLUMN_DEF|CHAR_OCTE&|IS_NULL&
+------------------------------------------------------------------------------
+ROLLNO              |INTEGER  |0   |10  |10    |NULL      |NULL      |YES
+YEAR_NO             |SMALLINT |0   |10  |5     |NULL      |NULL      |YES
+STATUS              |BOOLEAN  |NULL|NULL|1     |NULL      |NULL      |YES
+AMOUNT              |INTEGER  |0   |10  |10    |NULL      |NULL      |YES
+PAY_DATE            |DATE     |0   |10  |10    |NULL      |NULL      |YES
+
+ij> describe fee_structure;
+COLUMN_NAME         |TYPE_NAME|DEC&|NUM&|COLUM&|COLUMN_DEF|CHAR_OCTE&|IS_NULL&
+------------------------------------------------------------------------------
+COURSE              |VARCHAR  |NULL|NULL|50    |NULL      |100       |YES
+BRANCH              |VARCHAR  |NULL|NULL|50    |NULL      |100       |YES
+YEAR_NO             |SMALLINT |0   |10  |5     |NULL      |NULL      |YES
+AMOUNT              |INTEGER  |0   |10  |10    |NULL      |NULL      |YES
+SESSION_START       |SMALLINT |0   |10  |5     |NULL      |NULL      |YES
+
+ij> describe subject;
+COLUMN_NAME         |TYPE_NAME|DEC&|NUM&|COLUM&|COLUMN_DEF|CHAR_OCTE&|IS_NULL&
+------------------------------------------------------------------------------
+SUBJECT_CODE        |SMALLINT |0   |10  |5     |PRI       |NULL      |NO
+SUBJECT_NAME        |VARCHAR  |NULL|NULL|50    |NULL      |100       |YES
+
+ij> describe exam_type;
+COLUMN_NAME         |TYPE_NAME|DEC&|NUM&|COLUM&|COLUMN_DEF|CHAR_OCTE&|IS_NULL&
+------------------------------------------------------------------------------
+EXAM_ID             |INTEGER  |0   |10  |10    |AUTOINCRE&|NULL      |NO
+EXAM_NAME           |VARCHAR  |NULL|NULL|20    |NULL      |40        |YES
+
+ij> describe notice;
+COLUMN_NAME         |TYPE_NAME|DEC&|NUM&|COLUM&|COLUMN_DEF|CHAR_OCTE&|IS_NULL&
+------------------------------------------------------------------------------
+NOTICE_ID           |INTEGER  |0   |10  |10    |AUTOINCRE&|NULL      |NO
+NOTICE              |VARCHAR  |NULL|NULL|5000  |NULL      |10000     |YES
+AUTHOR              |VARCHAR  |NULL|NULL|50    |NULL      |100       |YES
+TIMESTAMP           |DATE     |0   |10  |10    |NULL      |NULL      |YES
+SUBJECT             |VARCHAR  |NULL|NULL|50    |NULL      |100       |YES
+
+
+-------------
+id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+
+SELECT marks from 
