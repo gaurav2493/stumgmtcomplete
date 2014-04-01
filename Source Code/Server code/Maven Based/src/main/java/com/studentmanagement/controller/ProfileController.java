@@ -24,9 +24,16 @@ public class ProfileController {
 		return "changepassword";
 	}
 	@RequestMapping(value="/profile/changepasswordsubmit")
-	public String changePassword()
-	{		
-		return "changepassword";
+	public String changePassword(@RequestParam("old") String old,@RequestParam("new") String newpass,ModelMap model)
+	{	
+		ProfileManager profileManager=new ProfileManager(dataSource);
+		int status=profileManager.changePassword(old, newpass);
+		if(status==0)
+		{
+			model.addAttribute("message", "Incorect password");
+			return "somethingwentwrong";
+		}
+		return "submitted";
 	}
 	@RequestMapping(value="/profile/getprofile")
 	public String getProfile(@RequestParam("rollno") int rollNo, ModelMap model)
