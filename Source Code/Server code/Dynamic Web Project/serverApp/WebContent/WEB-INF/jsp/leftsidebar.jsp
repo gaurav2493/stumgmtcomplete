@@ -31,6 +31,7 @@
               	  <li><a href="<c:url value="/branch/addbranchform" />">Add a branch</a></li>
               	  <li><a href="<c:url value="/notice/uploadpage" />">Upload a Notice</a></li>
               	  <li><a href="<c:url value="/notice/viewnotices/1" />">View Notices</a></li>
+              	  <li><a href="<c:url value="/profile/changepassword" />">Change Password</a></li>
                   <li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
               	</ul>
               	</font>
