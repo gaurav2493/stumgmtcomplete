@@ -1,18 +1,31 @@
 
 var count_report=0;
 var count_exam=0;
+var len2=0;
 
 function showDrop()
 {
-if(document.getElementById("select_exam").value =="selectses_report")//select_exam_first
+	if((document.getElementById("yearselect_report").value!="selectsession_report")&&(document.getElementById("select_exam").value !="selectses_report"))
 	{
-		document.getElementById("select_exam_first").innerHTML="*Please select any exam"
-		document.getElementById("display_select_year").style.visibility="hidden";
+		takeYear_report();
 	}
 	else
 	{
-		document.getElementById("display_select_year").style.visibility="visible";
+		
+		document.getElementById("display_select_year").style.visibility="hidden";
+		document.getElementById("myTable_report").style.visibility="hidden";
+		document.getElementById("rt_heading").innerHTML="*Please Select any exam";
+		//$('select option[value="selectsession_report"]').attr("selected",true not working
+		//$('select option[value="selectsession_report"]').attr("selected", "selected");
+		
+		
 	}
+	if(document.getElementById("select_exam").value !="selectses_report")//select_exam_first
+	{
+			document.getElementById("display_select_year").style.visibility="visible";
+	}
+	
+	
 }
 
 function takeExam_report()
@@ -35,15 +48,7 @@ function examTypesFunction(examdata)
 	document.getElementById("loadImg_report").height="";
 	var dropdown = document.getElementById("select_exam");
 	var exam_id=select_exam.options[select_exam.selectedIndex].text;
-	if(document.getElementById("select_exam").value =="selectses_report")//select_exam_first
-	{
-		document.getElementById("select_exam_first").innerHTML="*Please select any exam"
-		
-	}
-	else
-	{
-		document.getElementById("display_select_year").style.visibility="visible";
-	}
+	
 	//alert(exam_id);
 	//var x = document.getElementById("select_exam");
 	if(count_exam==0)
@@ -124,15 +129,17 @@ function marksFunction(data)
 			cell4.innerHTML = Math.round((((obj.report[i].marks_obtained)/(obj.report[i].max_marks))*100)*100)/100+" %";
 		}
 		count_report++;
+		len2=obj.report.length;
 	}
 	else
 	{
 		count_report++;
-		for(i=(obj.report.length);i>0;i--)
+		for(i=(len2-1);i>0;i--)
 		{
 			document.getElementById("myTable_report").deleteRow(i);
 		}
-		for(i=0;i<((obj.report.length)-1);i++)
+		len2=obj.report.length;;
+		for(i=0;i<(len2-1);i++)
 		{
 			var row = table.insertRow(i+1);
 			var cell1 = row.insertCell(0);

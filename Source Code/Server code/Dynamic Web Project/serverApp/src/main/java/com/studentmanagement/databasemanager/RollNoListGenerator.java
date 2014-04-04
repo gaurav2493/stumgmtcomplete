@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.sql.DataSource;
 
@@ -69,6 +70,7 @@ public class RollNoListGenerator {
 		}
 		return false;
 	}
+	
 	private void close() {
 		try {
 			if (res != null) {

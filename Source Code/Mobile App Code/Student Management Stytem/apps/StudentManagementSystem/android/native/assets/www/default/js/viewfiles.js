@@ -49,11 +49,6 @@ function viewFiles(view_files_data)
 				$('.listview_viewfiles').append('<li><a href="#page5_single_notice" data-transition="slide" onclick="viewNoticeID('+vf_obj.viewnotice1[i].notice_id+')"><font size="4" color="#FFA500">'+vf_obj.viewnotice1[i].subject+'</font>&nbsp;&nbsp;<span class="glyphicon glyphicon-paperclip"></span></br><font size="2" color="#3CB371">'+vf_obj.viewnotice1[i].timestamp+'</font></br><font size="2" color="#00CED1"><b>Posted By: </b>'+vf_obj.viewnotice1[i].author+'</font></a></li>');
 				$('.listview_viewfiles').listview('refresh');
 			}
-			else
-			{
-				$('.listview_viewfiles').append('<li><a href="#page5_single_notice" data-transition="slide" onclick="viewNoticeID('+vf_obj.viewnotice1[i].notice_id+')"><font size="4" color="#FFA500">'+vf_obj.viewnotice1[i].subject+'</font></br><font size="2" color="#3CB371">'+vf_obj.viewnotice1[i].timestamp+'</font></br><font size="2" color="#00CED1"><b>Posted By: </b>'+vf_obj.viewnotice1[i].author+'</font></a></li>');
-				$('.listview_viewfiles').listview('refresh');
-			}
 		}
 	}
 	

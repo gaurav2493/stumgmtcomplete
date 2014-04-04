@@ -1,5 +1,6 @@
 
 var count=0;
+var len=0;
 
 $(document).ready(function(){
   $("#option1").click(function(){
@@ -16,7 +17,7 @@ function takeYear()
 	document.getElementById("loadImg").height="40";
 	var a=document.getElementById("yearselect").value;
 	var script = document.createElement('script');
-	script.src = attendance+a;		
+	script.src = attendance+a;	
 	document.getElementsByTagName('head')[0].appendChild(script);
 
 }
@@ -33,6 +34,7 @@ function JSONRetrive(data)
 	{
 		for(i=0;i<((obj.subject.length)-1);i++)
 		{
+			
 			var row = table.insertRow(i+1);
 			var cell1 = row.insertCell(0);
 			var cell2 = row.insertCell(1);
@@ -44,15 +46,16 @@ function JSONRetrive(data)
 			cell4.innerHTML = Math.round((((obj.subject[i].count)/(obj.subject[i].total))*100)*100)/100+" %";
 		}
 		count++;
+		len=obj.subject.length;
 	}
 	else
 	{
-		count++;
-		for(i=(obj.subject.length);i>0;i--)
+		for(j=((len)-1);j>0;j--)
 		{
-			document.getElementById("myTable").deleteRow(i);
+			document.getElementById("myTable").deleteRow(j);
 		}
-		for(i=0;i<((obj.subject.length)-1);i++)
+		len=obj.subject.length;
+		for(i=0;i<((len)-1);i++)
 		{
 			var row = table.insertRow(i+1);
 			var cell1 = row.insertCell(0);
