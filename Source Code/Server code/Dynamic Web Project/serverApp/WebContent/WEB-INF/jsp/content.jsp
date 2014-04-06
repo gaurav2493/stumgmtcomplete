@@ -14,6 +14,7 @@
               <img src='<c:url value="/images/4.jpeg"/>'height=200 width=200/>
               <img src='<c:url value="/images/5.png"/>'height=200 width=200/>
               <img src='<c:url value="/images/6.png"/>'height=200 width=200/>
+              <img src='<c:url value="/images/7.png"/>'height=200 width=200/>
               
               
               	

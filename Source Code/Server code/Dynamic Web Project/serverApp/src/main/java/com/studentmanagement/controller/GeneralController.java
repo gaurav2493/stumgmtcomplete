@@ -10,7 +10,7 @@ public class GeneralController {
 	
 	
 	@RequestMapping(value="/",method= RequestMethod.GET)
-	public String teacherlogin(ModelMap model)
+	public String teacherlogin()
 	{
 		return "homepage";
 	}
@@ -20,6 +20,16 @@ public class GeneralController {
 		
 			model.addAttribute("error", "true");
 			return "homepage";
+	}
+	@RequestMapping(value="/contact",method= RequestMethod.GET)
+	public String contact()
+	{
+		return "contact";
+	}
+	@RequestMapping(value="/downloadsource",method= RequestMethod.GET)
+	public String downloadsorce()
+	{
+		return "downloadsource";
 	}
 	
 }

@@ -23,10 +23,11 @@ public class CommonDataEntryController {
 	DataSource dataSource;
 	
 	@RequestMapping(value="/submit_new_student",method= RequestMethod.POST)
-	public String addStudentParams(@RequestParam Map<String,String> allRequestParams)
+	public String addStudentParams(@RequestParam Map<String,String> allRequestParams,ModelMap model)
 	{
 		NewStuffAdder newUserAdder=new NewStuffAdder(dataSource, allRequestParams);
-		newUserAdder.addStudent();
+		String message=newUserAdder.addStudent();
+		model.addAttribute("message", message);
 		return "submitted";
 	}
 	@RequestMapping(value="/submit_new_class",method= RequestMethod.POST)

@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.studentmanagement.components.StudentsSubjectMarks;
 import com.studentmanagement.databasemanager.BranchManager;
 import com.studentmanagement.databasemanager.ExamReports;
-import com.studentmanagement.databasemanager.ParentNotifier;
 import com.studentmanagement.databasemanager.StudentListGenerator;
 import com.studentmanagement.databasemanager.SubjectsChooser;
 
@@ -86,11 +85,6 @@ public class AcademicMarksController {
 		HttpSession session=request.getSession();
 		ExamReports examReports=new ExamReports(dataSource);
 		examReports.insertMarks(allRequestParams, session);
-		ParentNotifier parentNotifier=new ParentNotifier(dataSource);
-		@SuppressWarnings("unchecked")
-		Map<String,String> allRequestParamsFromPreviousPage=(Map<String, String>)session.getAttribute("examparams");
-		String subject = allRequestParamsFromPreviousPage.get("subject");
-		parentNotifier.notifyAllParentsAboutMarksUploaded(subject, allRequestParamsFromPreviousPage);
 		return "submitted";
 	}	
 	@RequestMapping(value="/academicreports/viewmarks")
