@@ -31,17 +31,25 @@ public class CommonDataEntryController {
 		return "submitted";
 	}
 	@RequestMapping(value="/submit_new_class",method= RequestMethod.POST)
-	public String addClassParams(@RequestParam Map<String,String> allRequestParams)
+	public String addClassParams(@RequestParam Map<String,String> allRequestParams,ModelMap model)
 	{
 		NewStuffAdder newStuffAdder=new NewStuffAdder(dataSource, allRequestParams);
-		newStuffAdder.createNewClass();
+		boolean bool=newStuffAdder.createNewClass();
+		if(bool)
+			model.addAttribute("message", "Class Added successfully");
+		else 
+			model.addAttribute("message", "Class record could not be uploaded.<br/>Please Recheck the input values");
 		return "submitted";
 	}
 	@RequestMapping(value="/submit_new_subject",method= RequestMethod.POST)
-	public String addSubjectParams(@RequestParam Map<String,String> allRequestParams)
+	public String addSubjectParams(@RequestParam Map<String,String> allRequestParams,ModelMap model)
 	{
 		NewStuffAdder newStuffAdder=new NewStuffAdder(dataSource, allRequestParams);
-		newStuffAdder.addSubject();
+		boolean bool=newStuffAdder.addSubject();
+		if(bool)
+			model.addAttribute("message", "Subject Added successfully");
+		else 
+			model.addAttribute("message", "Subject could not be added.<br/>Please Recheck the input values");
 		return "submitted";
 	}
 	@RequestMapping(value="/addstudent")

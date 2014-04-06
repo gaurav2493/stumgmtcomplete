@@ -16,8 +16,8 @@
 
 	<bean id="fileSaveUrl" class="java.lang.String">
 		<constructor-arg>
-			<value>C:/Users/Devesh/Desktop/</value>
-		</constructor-arg>
+			<value>C:/Users/Devesh/Desktop/</value><!-- Location where files uploaded by teacher will be saved -->
+		</constructor-arg><!-- After editing datasource.xml, restart the server -->
 	</bean>
 
 </beans>

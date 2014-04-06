@@ -12,5 +12,5 @@ We have made some projects together which includes</p>
 We also have a <a href="http://programersparadise.tk">blog</a> where we write some of the programs and codes that we do.
 
 <h2>Team Name - Sharingan</h2>
-<font color="red" size=+2>Member Gaurav Sharma<br/>Phone - +91 9013669956
+<font color="red" size=+2>Members<br/> Gaurav Sharma<br/>Phone - +91 9013669956
 <hr width="2"/>Ankit Chaurasia<br/>Phone - +91 9453907031</font>
