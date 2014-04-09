@@ -1,6 +1,6 @@
 
 /* JavaScript content from js/url.js in folder common */
-var serverAddress="http://student-cut.rhcloud.com";
+var serverAddress="http://student-cut.rhcloud.com";//Replace this url by the server url for example 192.168.1.4:8080 or leave it as it is if you want to use the cloud server
 
 var authentication=serverAddress+"/login?user=";
 var attendance=serverAddress+"/jsonp/getjsonattendance?callback=JSONRetrive&session=";
