@@ -14,7 +14,6 @@ git push
 </code>
 </pre>
 <br/><br/>
-<h3 align="center">Download Androd App</h3>
 <center><img src='<c:url value="/images/android.png"/>' height=200/></center><br/><br/>
 <h3 align="center">Screenshots</h3>
 <img src='<c:url value="/images/00.png"/>' width="220" height="340">

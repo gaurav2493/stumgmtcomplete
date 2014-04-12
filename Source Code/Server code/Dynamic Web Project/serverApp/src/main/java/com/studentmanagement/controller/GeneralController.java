@@ -40,6 +40,11 @@ public class GeneralController {
 	{
 		
 			model.addAttribute("error", "true");
+			return "home";
+	}
+	@RequestMapping(value="/technology",method= RequestMethod.GET)
+	public String technology()
+	{
 			return "homepage";
 	}
 	@RequestMapping(value="/contact",method= RequestMethod.GET)

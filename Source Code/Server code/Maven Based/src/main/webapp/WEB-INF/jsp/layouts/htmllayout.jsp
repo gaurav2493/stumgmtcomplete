@@ -112,6 +112,9 @@
           <a href='<c:url value="/downloadsource"/>'>Downloads</a>
         </li>
         <li>
+          <a href='<c:url value="/technology"/>'>Technologies Used</a>
+        </li>
+        <li>
           <a href='<c:url value="/contact"/>'>Contact</a>
         </li>
       </ul>

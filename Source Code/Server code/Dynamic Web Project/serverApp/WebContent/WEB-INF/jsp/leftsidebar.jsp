@@ -4,11 +4,8 @@
     <h2>Members</h2>
     <form class="form-signin" role="form" action='<c:url value='/j_spring_security_check' />' method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input name="j_username" type="text" class="form-control" placeholder="Email address" required autofocus><br/>
+        <input name="j_username" type="text" class="form-control" placeholder="Username" required autofocus><br/>
         <input name="j_password" type="password" class="form-control" placeholder="Password" required>
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
      </form>
       
