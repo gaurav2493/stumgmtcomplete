@@ -38,7 +38,9 @@ public class GeneralController {
 	@RequestMapping(value="/loginfailed",method= RequestMethod.GET)
 	public String getNoticeXml(ModelMap model)
 	{
-		
+			NoticeManager noticeManager=new NoticeManager(dataSource);
+			List<Notice> noticeList =  noticeManager.getNoticeList(0, 10);
+			model.addAttribute("noticeList", noticeList);
 			model.addAttribute("error", "true");
 			return "home";
 	}
