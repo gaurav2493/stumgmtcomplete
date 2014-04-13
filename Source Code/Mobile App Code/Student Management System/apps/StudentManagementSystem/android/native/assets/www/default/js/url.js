@@ -1,6 +1,11 @@
 
 /* JavaScript content from js/url.js in folder common */
-var serverAddress="http://student-cut.rhcloud.com";//Replace this url by the server url for example 192.168.1.4:8080 or leave it as it is if you want to use the cloud server
+var serverAddress="http://gaura.ng.bluemix.net";//Replace this url by the server url for example 192.168.1.4:8080 or leave it as it is if you want to use the cloud server
+/*
+Alternate URL
+http://gaura.ng.bluemix.net  //for this, username=1109113019,pass=1109113019 for mobile app, server address = gaurav, pass=ankit
+http://student-cut.rhcloud.com
+*/
 
 var authentication=serverAddress+"/login?user=";
 var attendance=serverAddress+"/jsonp/getjsonattendance?callback=JSONRetrive&session=";

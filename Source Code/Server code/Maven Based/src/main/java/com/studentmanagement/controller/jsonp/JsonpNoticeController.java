@@ -35,7 +35,7 @@ public class JsonpNoticeController {
 		Notice notice=noticeManager.viewNotice(noticeId);
 		model.addAttribute("notice", notice);
 		//notice.setNotice(notice.getNotice().replaceAll("\\r|\\n", "<br/>"));
-		notice.setNotice(notice.getNotice().replaceAll("\\r\\n|\\r|\\n", "<br/>"));
+		notice.setNotice(notice.getNotice().replaceAll("\\r\\n|\\r|\\n", "<br/>").replace("\"","\\'"));
 		model.addAttribute("callback", callback);
 		return "jsonnotice";
 	}
