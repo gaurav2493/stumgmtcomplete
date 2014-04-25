@@ -11,6 +11,7 @@
 		<intercept-url pattern="/select**" access="hasAnyRole('ROLE_ADMIN','ROLE_TEACHER')" />
 		<intercept-url pattern="/add**" access="hasAnyRole('ROLE_ADMIN','ROLE_TEACHER')" />
 		<intercept-url pattern="/academicreports**" access="hasAnyRole('ROLE_ADMIN','ROLE_TEACHER')" />
+		<intercept-url pattern="/notice/upload**" access="hasAnyRole('ROLE_ADMIN','ROLE_TEACHER')" />
 		<intercept-url pattern="/jsonp/**" access="hasRole('ROLE_USER')" />
 		<form-login default-target-url="/"
 			authentication-failure-url="/loginfailed" />
