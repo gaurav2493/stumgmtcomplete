@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.studentmanagement.components.StudentsSubjectMarks;
 import com.studentmanagement.databasemanager.BranchManager;
 import com.studentmanagement.databasemanager.ExamReports;
+import com.studentmanagement.databasemanager.ParentNotifier;
 import com.studentmanagement.databasemanager.StudentListGenerator;
 import com.studentmanagement.databasemanager.SubjectsChooser;
 
@@ -89,7 +90,11 @@ public class AcademicMarksController {
 		ExamReports examReports=new ExamReports(dataSource);
 		boolean bool=examReports.insertMarks(allRequestParams, session);
 		if(bool)
+		{
 			model.addAttribute("message", "Marks Uploaded successfully");
+			ParentNotifier parentNotifier=new ParentNotifier(dataSource,session);
+			parentNotifier.emailAll(allRequestParams);
+		}
 		else 
 			model.addAttribute("message", "Marks could not be uploaded.<br/>Please Recheck the input values");
 		return "submitted";

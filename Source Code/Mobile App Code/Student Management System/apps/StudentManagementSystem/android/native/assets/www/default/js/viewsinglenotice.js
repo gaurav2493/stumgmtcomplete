@@ -26,7 +26,7 @@ function view_single_notice(single_notice_data)
 			{
 				for(j=0;j<((sn_obj.viewnotice2[i].fileurl.length)-1);j++)
 				{
-					document.getElementById("single_notice").innerHTML +='<a href="'+serverAddress+sn_obj.viewnotice2[i].fileurl[j].url+'"><br/><font size="2" color="#00008B">'+sn_obj.viewnotice2[i].fileurl[j].filename+'</font></a><br/><br/>';
+					document.getElementById("single_notice").innerHTML +='<a href="#" onclick="openBrowser(\''+serverAddress+sn_obj.viewnotice2[i].fileurl[j].url+'\')"><br/><font size="2" color="#00008B">'+sn_obj.viewnotice2[i].fileurl[j].filename+'</font></a><br/><br/>';
 				}
 			}
 			
@@ -34,6 +34,10 @@ function view_single_notice(single_notice_data)
 	}
 	
 	
+}
+function openBrowser(url)
+{
+	WL.App.openURL(url, "", "");
 }
 
 
